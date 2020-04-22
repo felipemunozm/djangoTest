@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    {% if lista_ultima_pregunta %}
+    <ul>
+        {% for pregunta in lista_ultima_pregunta %}
+        <li><a href="{% url 'formulario:detalle' pregunta.id %}">{{pregunta.texto_pregunta}}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay formularios disponiles</p>
+    {% endif %}
+</body>
+</html>

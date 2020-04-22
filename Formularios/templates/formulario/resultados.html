@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>{{pregunta.texto_pregunta}}</h1>
+    <ul>
+    {%for alternativa in pregunta.alternativa_set.all%}
+    <li>{{alternativa.texto_alternativa}} -- {{alternativa.votos}} voto{{alternativa.votos|pluralize}}</li>
+    {%endfor%}
+    </ul>
+    <a href="{%url 'formulario:detalle' pregunta.id%}">Votar nuevamente</a>
+</body>
+</html>
